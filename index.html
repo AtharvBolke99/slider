@@ -11,26 +11,25 @@
         margin: 0;
         padding: 0;
         background-color: grey;
-
     }
     .heading {
         text-align: center;
         color: white;
-        font-size: 70px;
+        font-size: 60px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
     .container {
         position: relative;
-        margin-top: 150px;
-        width: fit-content;
-        margin-left: 650px;
+        width: fit-content; 
+        display: flex;
+        margin: auto;
+        margin-top: 100px;
     }
 
     .btn {
         position: absolute;
         height: 100px;
-        width: auto;
         cursor: pointer;
     }
     .btn:hover {
@@ -38,9 +37,10 @@
         transition: 0.5s;
     }
     .img {
-        width: 1000px;
+        width: 700px;
         height: auto;
         object-fit: cover;
+        display: inline-block;
     }
 
     .left-arrow {
@@ -52,8 +52,8 @@
         margin-top: 22%;
     }
 </style>
-<body>
-    <h1 class="heading">Image Slider</h1> 
+<body> 
+    <h1 class="heading">Image Slider</h1>
 
     <div class="container">
         <img src="car1.jpg" alt="car-img" class="img" id="img">
