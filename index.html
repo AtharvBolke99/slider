@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imageSlider</title>
+</head>
+<style>
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: grey;
+
+    }
+    .heading {
+        text-align: center;
+        color: white;
+        font-size: 70px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .container {
+        position: relative;
+        margin-top: 150px;
+        width: fit-content;
+        margin-left: 650px;
+    }
+
+    .btn {
+        position: absolute;
+        height: 100px;
+        width: auto;
+        cursor: pointer;
+    }
+    .btn:hover {
+        transform: scale(0.8);
+        transition: 0.5s;
+    }
+    .img {
+        width: 1000px;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .left-arrow {
+        left: -90px;
+        margin-top: 22%;
+    }
+    .right-arrow {
+        right: -90px;
+        margin-top: 22%;
+    }
+</style>
+<body>
+    <h1 class="heading">Image Slider</h1> 
+
+    <div class="container">
+        <img src="car1.jpg" alt="car-img" class="img" id="img">
+        <img src="left-arrow.png" onclick="prev()" class="left-arrow btn" id="left">
+        <img src="right-arrow.png" onclick="next()" class="right-arrow btn" id="right">
+    </div>
+
+    <script>
+
+        const imageArray = ["car1.jpg", "car2.jpg", "car3.jpg", "car4.jpg", "car5.jpg","car6.jpg","car7.jpg"];
+
+        let imgIndex = 0;
+        const imgElement = document.getElementById('img');
+
+        function next() {
+            if (imgIndex < imageArray.length - 1 ){
+                imgIndex++;
+                imgElement.src = imageArray[imgIndex];
+            } else {
+                imgIndex = 0;
+                imgElement.src = imageArray[imgIndex];
+            }
+        }
+
+        function prev() {
+            if (imgIndex > 0){
+                imgIndex--;
+                imgElement.src = imageArray[imgIndex];
+            } else {
+                imgIndex = imageArray.length - 1;
+                imgElement.src = imageArray[imgIndex];
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
